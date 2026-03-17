@@ -12,14 +12,13 @@ server.use(express.json());
 // cRRud 
 server.get("/", (req, res) => {
     res.json({ message: "get methond!" })
-
 })
 
 server.listen(port1, () => {
     console.log(`server corrent en port ${port1}; http://localhost:${port1}`)
 });
 
-server.listen(port1, () => console.log(`server local en port ${port1}`));
+
 
 
 
@@ -32,7 +31,9 @@ server.post( "/" , (req,res)=> {
     console.log(dato)
     res.json({ message: "post method!" , dato: dato })   // , dato: dato }) si el nom es pot dir igual que la propiett, podem posar directament dato
 })
-            
+
+
+
 // crUUd  Update
 server.put( "/:id" , (req,res) => { // li asignem id al param que entra per url
     const { password } = req.body;
@@ -46,7 +47,6 @@ server.put( "/:id" , (req,res) => { // li asignem id al param que entra per url
 
 
 server.delete( "/" , (req,res) => { // li asignem id al param que entra per url
-   
     const { id } = req.query ; // per quan les dades es passen per url kakaka.com:port?id=1&name=jorgen& .... 
     //console.log(dato)
     res.json({ message: "delete method!" , data: `user: ${id} amb nomva pass ${password}` })   // , dato: dato }) si el nom es pot dir igual que la propiett, podem posar directament dato
